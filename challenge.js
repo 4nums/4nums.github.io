@@ -251,7 +251,7 @@ function init_game(all_inputs ){
 	canvas_ele.setAttribute('tabindex','0');
 	canvas_ele.focus();
 	width  = canvas_ele.width;
-	height = canvas_ele.height;
+	height = width*3/2; //canvas_ele.height;
 	//width =  window.innerWidth;
 	//height = window.innerHeight;
 	status1   = 1;
