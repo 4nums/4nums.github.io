@@ -696,7 +696,7 @@ function handlekeydown(e){
 function onclick1 (e){
 	var canvas = document.getElementById(canvasID);
        var x, y;
-	var mainbody = document.getElementById(mainbodyID);
+	var mainbody = document.getElementsByTagName('body')[0]; //document.getElementById(mainbodyID);
 
        if (e.pageX != undefined && e.pageY != undefined) {
   		x = e.pageX;
