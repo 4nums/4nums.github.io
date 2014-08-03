@@ -216,7 +216,7 @@ function ongame(regionID){
 		}
 	}
 	else if (regionID ==10){//skip
-	 var win = window.open('http://www.4shu.net', '_blank');
+	 var win = window.open('http://www.4nums.com', '_blank');
   	 win.focus(); // didn't solve one.
 	}
 	else if (regionID ==11){//quit
@@ -497,12 +497,12 @@ function tickclock(){
  
 
 function game_draw(isclock){ // 0) status1, 1) game_type, 2) time, time_left, 3) solved, unsolved, 4) this game history
-	draw_text(Array(width/100,height *1.05), "Make 24 from 4nums.com",  "#555",   + (width/16) +"px sans-serif");
+	draw_text(Array(width/20,height *1.06), "Make 24 from 4nums.com",  "#555",   + (width/15) +"px sans-serif");
 	if (status1 == 6)
-	{	var scoretext ="Solved  in"+ (game_tick1/100)+  "seconds";
+	{	var scoretext ="Solved  in "+ (game_tick1/100)+  " seconds";
 		draw_rect(Array(0,0, width, height), "#fff", 0, "#000"); // clean the whole region
-		draw_text(Array(width/100,height *0.3), scoretext,  "#f00",  "bold " + (width/15) +"px sans-serif");
-		draw_text(Array(width/100,height *0.45), "Click here for more math games!",  "#00f",  "bold " + (width/13) +"px sans-serif");
+		draw_text(Array(width/10,height *0.3), scoretext,  "#f00",  "bold " + (width/15) +"px sans-serif");
+		draw_text(Array(width/10,height *0.45), "Click  for more math games!",  "#00f",  "bold " + (width/13) +"px sans-serif");
 		return; 
 	}
 	if (status1 == 0){
@@ -538,7 +538,7 @@ function game_draw(isclock){ // 0) status1, 1) game_type, 2) time, time_left, 3)
 //	draw_text(Array(rect_quit[0], rect_quit[1] + rect_quit[3]/1.6), "      Quit", "#f00", "bold " + Math.round(rect_quit[2]/6) +"px sans-serif");
 
 	draw_rect(rect_skip ,  "#fff", 1, "#00f");
-	draw_text(Array(rect_skip[0]+rect_skip[2]/12.6, rect_skip[1] + rect_skip[3]/1.6), "4nums", "#00f", "bold " + Math.round(rect_skip[2]/3) +"px sans-serif");
+	draw_text(Array(rect_skip[0]+rect_skip[2]/12.6, rect_skip[1] + rect_skip[3]/1.6), "4nums", "#00f", "bold " + Math.round(rect_skip[2]/4) +"px sans-serif");
 	var colorredo = "#000", widthredo = 5;
 	if (future_steps.length ==0){ colorredo = "#aaa"; widthredo = 2;}
 	draw_rect(rect_redo ,  "#fff", widthredo , colorredo );
@@ -756,7 +756,7 @@ function onclick1 (e){
 
 		break; 
 		case 6:
-			 var win = window.open('http://www.4shu.net', '_blank');
+			 var win = window.open('http://www.4nums.com', '_blank');
 			 win.focus(); // didn't solve one.
 
 		beak;
