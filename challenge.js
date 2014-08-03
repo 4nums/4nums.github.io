@@ -502,7 +502,7 @@ function game_draw(isclock){ // 0) status1, 1) game_type, 2) time, time_left, 3)
 	{	var scoretext ="今天的高难24点你用时"+ (game_tick1/100)+  "秒";
 		draw_rect(Array(0,0, width, height), "#fff", 0, "#000"); // clean the whole region
 		draw_text(Array(width/100,height *0.3), scoretext,  "#f00",  "bold " + (width/15) +"px sans-serif");
-		draw_text(Array(width/100,height *0.6), "点击这里去4shu.net看更多24点益智游戏",  "#ddd",  "bold " + (width/15) +"px sans-serif");
+		//draw_text(Array(width/100,height *0.6), "点击这里去4shu.net看更多24点益智游戏",  "#ddd",  "bold " + (width/15) +"px sans-serif");
 		return; 
 	}
 	if (status1 == 0){
