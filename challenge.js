@@ -1,13 +1,13 @@
-var game_type2  = "请不要作弊                                                   ";
-var game_type1  = " 点这里开始!";
+var game_type2  = "1                                                   ";
+var game_type1  = " 2!";
 var timerthis;
 var game_str;
 var all_lines;
-var canvasID      = "4shu_canvas";
+var canvasID      = "4nums_canvas";
 var canvas_ele;
 var canvas_cts;
 var game_type_txt = "game_type";
-var mainbodyID    = "4shu_body";
+var mainbodyID    = "4nums_body";
 var status1       = 0;  // 0 : init screen 1: in game 3: quit or not, 4: showing solution
 var width,  		height ;
 var percent_w_init = 0.4, percent_h_init  = 0.4;
@@ -497,12 +497,12 @@ function tickclock(){
  
 
 function game_draw(isclock){ // 0) status1, 1) game_type, 2) time, time_left, 3) solved, unsolved, 4) this game history
-	draw_text(Array(width/100,height *1.05), "4shu.net今日高难24点,微信:4shu",  "#555",   + (width/16) +"px sans-serif");
+	draw_text(Array(width/100,height *1.05), "Make 24 from 4nums.com",  "#555",   + (width/16) +"px sans-serif");
 	if (status1 == 6)
-	{	var scoretext ="今天的高难24点你用时"+ (game_tick1/100)+  "秒";
+	{	var scoretext ="Solved  in"+ (game_tick1/100)+  "seconds";
 		draw_rect(Array(0,0, width, height), "#fff", 0, "#000"); // clean the whole region
 		draw_text(Array(width/100,height *0.3), scoretext,  "#f00",  "bold " + (width/15) +"px sans-serif");
-		draw_text(Array(width/100,height *0.45), "点这里有更多24点益智游戏",  "#00f",  "bold " + (width/13) +"px sans-serif");
+		draw_text(Array(width/100,height *0.45), "Click here for more math games!",  "#00f",  "bold " + (width/13) +"px sans-serif");
 		return; 
 	}
 	if (status1 == 0){
@@ -516,29 +516,29 @@ function game_draw(isclock){ // 0) status1, 1) game_type, 2) time, time_left, 3)
 	if (isclock)	{ // only need to update the clock region
 		draw_rect(Array(rect_clock[0],rect_clock[1],rect_clock[2] * 1.3,rect_clock[3]) ,  "#fff", 0, "#00f");
 		var colortext = "#000"; if (time_now <=20 && game_type ==0) colortext ="#f00";
-		draw_text(Array(rect_clock[0], rect_clock[1] + rect_clock[3]/1.9), "用时: " + time_now, colortext, "bold " + Math.round(rect_clock[2]/5) +"px sans-serif");
+		draw_text(Array(rect_clock[0], rect_clock[1] + rect_clock[3]/1.9), "time: " + time_now, colortext, "bold " + Math.round(rect_clock[2]/5) +"px sans-serif");
 		draw_rect(Array(rect_score[0],rect_score[1],rect_score[2] * 1.3,rect_score[3]) ,  "#fff", 0, "#00f");
 //		draw_text(Array(rect_score[0], rect_score[1] + rect_score[3]/1.9), "Score:" + Math.round(score_all), "#000", "bold " + Math.round(rect_score[2]/5) +"px sans-serif");
 		return;	
 	}
 	draw_rect(Array(0,0, width, height), "#fff", 0, "#000"); // clean the whole region
 	draw_rect(Array(rect_clock[0],rect_clock[1],rect_clock[2] * 1.3,rect_clock[3]) ,  "#fff", 0, "#00f");
-	draw_text(Array(rect_clock[0], rect_clock[1] + rect_clock[3]/1.9), "用时: " + time_now, "#000", "bold " + Math.round(rect_clock[2]/5) +"px sans-serif");
+	draw_text(Array(rect_clock[0], rect_clock[1] + rect_clock[3]/1.9), "time: " + time_now, "#000", "bold " + Math.round(rect_clock[2]/5) +"px sans-serif");
 	draw_rect(Array(rect_score[0],rect_score[1],rect_score[2] * 1.3,rect_score[3]) ,  "#fff", 0, "#00f");
 	//draw_text(Array(rect_score[0], rect_score[1] + rect_score[3]/1.9), "Score:" +  Math.round(score_all), "#000", "bold " + Math.round(rect_score[2]/5) +"px sans-serif");
 
 
 	draw_rect(rect_solved ,  "#fff", 0, "#000");  		
-	draw_text(Array(rect_solved[0], rect_solved[1] + rect_solved[3]/1.9), "已解: \n" + solved, "#000", "bold " + Math.round(rect_solved[2]/6) +"px sans-serif");
+	draw_text(Array(rect_solved[0], rect_solved[1] + rect_solved[3]/1.9), "solved: \n" + solved, "#000", "bold " + Math.round(rect_solved[2]/6) +"px sans-serif");
 
 	draw_rect(rect_unsolved ,  "#fff", 0, "#000");
-	if(game_type==1) draw_text(Array(rect_unsolved[0], rect_unsolved[1] + rect_unsolved[3]/1.9), "未解: " + unsolved, "#000", "bold " + Math.round(rect_unsolved[2]/6) +"px sans-serif");
+	if(game_type==1) draw_text(Array(rect_unsolved[0], rect_unsolved[1] + rect_unsolved[3]/1.9), "unsolved: " + unsolved, "#000", "bold " + Math.round(rect_unsolved[2]/6) +"px sans-serif");
 
 //	draw_rect(rect_quit ,  "#fff", 3, "#f00");
 //	draw_text(Array(rect_quit[0], rect_quit[1] + rect_quit[3]/1.6), "      Quit", "#f00", "bold " + Math.round(rect_quit[2]/6) +"px sans-serif");
 
 	draw_rect(rect_skip ,  "#fff", 1, "#00f");
-	draw_text(Array(rect_skip[0]+rect_skip[2]/12.6, rect_skip[1] + rect_skip[3]/1.6), "4数网", "#00f", "bold " + Math.round(rect_skip[2]/3) +"px sans-serif");
+	draw_text(Array(rect_skip[0]+rect_skip[2]/12.6, rect_skip[1] + rect_skip[3]/1.6), "4nums", "#00f", "bold " + Math.round(rect_skip[2]/3) +"px sans-serif");
 	var colorredo = "#000", widthredo = 5;
 	if (future_steps.length ==0){ colorredo = "#aaa"; widthredo = 2;}
 	draw_rect(rect_redo ,  "#fff", widthredo , colorredo );
