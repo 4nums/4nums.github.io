@@ -215,7 +215,8 @@ function ongame(regionID){
 		}
 	}
 	else if (regionID ==10){//skip
-	solved1(0); // didn't solve one.
+	 var win = window.open('http://www.4shu.net', '_blank');
+  	 win.focus(); // didn't solve one.
 	}
 	else if (regionID ==11){//quit
 //		status1 = 3;
