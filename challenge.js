@@ -65,7 +65,8 @@ function gameover(){
 	document.getElementById("gamesub").submit();
 */
 	game_tick1 = game_tick;
-	set_title();
+	status1 = 6; 
+	game_draw(0);
 //	init_game(gamestr);
 }
 
@@ -496,6 +497,11 @@ function tickclock(){
  
 
 function game_draw(isclock){ // 0) status1, 1) game_type, 2) time, time_left, 3) solved, unsolved, 4) this game history
+	if (status1 == 6)
+	{	
+		draw_rect(Array(0,0, width, height), "#fff", 0, "#000"); // clean the whole region
+		return; 
+	}
 	if (status1 == 0){
 		draw_rect(Array(0,0, width, height), "#fff", 0, "#000"); // clean the whole region
 		draw_rect(xywh_init1, "#00a", 5, "#00a");
@@ -749,4 +755,4 @@ function onclick1 (e){
 		default : 
 	}
 }
- 
+  
