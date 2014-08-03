@@ -252,7 +252,7 @@ function init_game(all_inputs ){
 	canvas_ele.setAttribute('tabindex','0');
 	canvas_ele.focus();
 	width  = canvas_ele.width;
-	height =  canvas_ele.height;
+	height =  canvas_ele.height*0.9;
 	//width =  window.innerWidth;
 	//height = window.innerHeight;
 	status1   = 1;
@@ -529,7 +529,7 @@ function game_draw(isclock){ // 0) status1, 1) game_type, 2) time, time_left, 3)
 //	draw_text(Array(rect_quit[0], rect_quit[1] + rect_quit[3]/1.6), "      Quit", "#f00", "bold " + Math.round(rect_quit[2]/6) +"px sans-serif");
 
 	draw_rect(rect_skip ,  "#fff", 3, "#00f");
-	draw_text(Array(rect_skip[0]+rect_skip[2]/2.6, rect_skip[1] + rect_skip[3]/1.6), "跳 过", "#00f", "bold " + Math.round(rect_skip[2]/6) +"px sans-serif");
+	draw_text(Array(rect_skip[0]+rect_skip[2]/2.6, rect_skip[1] + rect_skip[3]/1.6), "4数网", "#00f", "bold " + Math.round(rect_skip[2]/6) +"px sans-serif");
 	var colorredo = "#000", widthredo = 5;
 	if (future_steps.length ==0){ colorredo = "#aaa"; widthredo = 2;}
 	draw_rect(rect_redo ,  "#fff", widthredo , colorredo );
