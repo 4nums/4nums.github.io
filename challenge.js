@@ -755,11 +755,11 @@ function onclick1 (e){
 			{  status1=1; game_draw(0);}
 
 		break; 
-		case 6:
-			 var win = window.open('http://www.4shu.net', '_blank');
-			 win.focus(); // didn't solve one.
+		//case 6:
+		//	 var win = window.open('http://www.4shu.net', '_blank');
+		//	 win.focus(); // didn't solve one.
 
-		beak;
+		//beak;
 		default : 
 	}
 }
