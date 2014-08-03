@@ -497,6 +497,7 @@ function tickclock(){
  
 
 function game_draw(isclock){ // 0) status1, 1) game_type, 2) time, time_left, 3) solved, unsolved, 4) this game history
+	draw_text(Array(width/20,height *1.05), "每日高难24点由4shu.net提供,微信:4shu",  "#999",  "bold " + (width/15) +"px sans-serif");
 	if (status1 == 6)
 	{	var scoretext ="今天的高难24点你用时"+ (game_tick1/100)+  "秒";
 		draw_rect(Array(0,0, width, height), "#fff", 0, "#000"); // clean the whole region
