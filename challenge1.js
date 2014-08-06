@@ -716,8 +716,8 @@ function onclick1 (e){
 		x = e.clientX + document.body.scrollLeft + document.documentElement.scrollLeft;
 		y = e.clientY + document.body.scrollTop  + document.documentElement.scrollTop;
        }
-       x -= (canvas.offsetLeft + mainbody.offsetLeft);
-       y -= (canvas.offsetTop + mainbody.offsetTop);  
+       x -= (canvas.offsetLeft + 0* mainbody.offsetLeft);
+       y -= (canvas.offsetTop + 0* mainbody.offsetTop);  
 	switch (status1){
 		case  0: // on the init-game screen
  			var rect_arr = new Array(xywh_init, xywh_init1);
