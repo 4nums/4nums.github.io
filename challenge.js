@@ -708,7 +708,7 @@ function onclick1 (e){
        var x, y;
 	var mainbody = document.getElementsByTagName('body')[0]; //document.getElementById(mainbodyID);
 
-       if (e.pageX != undefined && e.pageY != undefined) {
+       if (0 && e.pageX != undefined && e.pageY != undefined) {
   		x = e.pageX;
 		y = e.pageY;
        }
