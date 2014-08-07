@@ -513,7 +513,7 @@ function game_draw(isclock){ // 0) status1, 1) game_type, 2) time, time_left, 3)
       		var imageObj = new Image();
 
       		imageObj.onload = function() {
-		        context.drawImage(imageObj, x1, y1, width11, height11);
+		        context1.drawImage(imageObj, x1, y1, width11, height11);
       		};
       		imageObj.src = 'http://www.html5canvastutorials.com/demos/assets/darth-vader.jpg';
 	
