@@ -500,14 +500,7 @@ function game_draw(isclock){ // 0) status1, 1) game_type, 2) time, time_left, 3)
 	draw_text(Array(width/100,height *1.05), "4shu.net今日24点,微信:suan4shu",  "#555",   + (width/16) +"px sans-serif");
 	if (status1 == 6)
 	{	
-      		var imageObj = new Image();
-		var  a1   =  document.getElementById(canvasID) ;
-	        var context = a1.getContext('2d');
-      		imageObj.onload = function() {
-		        context.drawImage(imageObj, x, y, width, height);
-      		};
-      		imageObj.src = 'http://www.html5canvastutorials.com/demos/assets/darth-vader.jpg';
-
+      
 		var scoretext ="今天的高难24点你用时"+ (game_tick1/100)+  "秒";
 		draw_rect(Array(0,0, width, height), "#fff", 0, "#000"); // clean the whole region
 		draw_text(Array(width/100,height *0.3), scoretext,  "#f00",  "bold " + (width/15) +"px sans-serif");
