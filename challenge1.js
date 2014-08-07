@@ -508,14 +508,14 @@ function game_draw(isclock){ // 0) status1, 1) game_type, 2) time, time_left, 3)
 	         var context1 = canvas_ele.getContext('2d');
 		 var x1 = width/20;
       		var y1 = height * 0.4;
-      		var width11 = min(width*9/10, height/2);
+      		var width11 = Math.min(width*9/10, height/2);
       		var height11 = width11;
       		var imageObj = new Image();
 
       		imageObj.onload = function() {
 		        context1.drawImage(imageObj, x1, y1, width11, height11);
       		};
-      		imageObj.src = 'http://www.html5canvastutorials.com/demos/assets/darth-vader.jpg';
+      		imageObj.src = 'https://github.com/24theory/24theory.github.io/blob/master/weixin/1024/weixin1.jpg';
 	
 		return; 
 	}
