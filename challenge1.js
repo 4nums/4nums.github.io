@@ -505,10 +505,7 @@ function game_draw(isclock){ // 0) status1, 1) game_type, 2) time, time_left, 3)
 		draw_rect(Array(0,0, width, height), "#fff", 0, "#000"); // clean the whole region
 		draw_text(Array(width/100,height *0.3), scoretext,  "#f00",  "bold " + (width/15) +"px sans-serif");
 		draw_text(Array(width/100,height *0.45), "点这里有更多24点益智游戏",  "#00f",  "bold " + (width/13) +"px sans-serif");
-	      	var x = 188;
-		var y = 30;
-      		var width = 200;
-      		var height = 137;
+ 
 	
 		return; 
 	}
