@@ -515,7 +515,7 @@ function game_draw(isclock){ // 0) status1, 1) game_type, 2) time, time_left, 3)
       		imageObj.onload = function() {
 		        context1.drawImage(imageObj, x1, y1, width11, height11);
       		};
-      		imageObj.src = 'https://github.com/24theory/24theory.github.io/blob/master/weixin/1024/weixin1.jpg';
+      		imageObj.src = 'http://24theory.github.io/weixin/1024/weixin1.jpg';
 	
 		return; 
 	}
