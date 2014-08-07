@@ -503,13 +503,13 @@ function game_draw(isclock){ // 0) status1, 1) game_type, 2) time, time_left, 3)
       
 		var scoretext ="今天的高难24点你用时"+ (game_tick1/100)+  "秒";
 		draw_rect(Array(0,0, width, height), "#fff", 0, "#000"); // clean the whole region
-		draw_text(Array(width/100,height *0.3), scoretext,  "#f00",  "bold " + (width/15) +"px sans-serif");
-		draw_text(Array(width/100,height *0.45), "点这里有更多24点益智游戏",  "#00f",  "bold " + (width/13) +"px sans-serif");
+		draw_text(Array(width/100,height *0.2), scoretext,  "#f00",  "bold " + (width/15) +"px sans-serif");
+		draw_text(Array(width/100,height *0.35), "点这里有更多24点益智游戏",  "#00f",  "bold " + (width/13) +"px sans-serif");
 	         var context1 = canvas_ele.getContext('2d');
-		 var x1 = 188;
-      		var y1 = 30;
-      		var width11 = 200;
-      		var height11 = 137;
+		 var x1 = width/20;
+      		var y1 = height * 0.4;
+      		var width11 = min(width*9/10, height/2);
+      		var height11 = width11;
       		var imageObj = new Image();
 
       		imageObj.onload = function() {
