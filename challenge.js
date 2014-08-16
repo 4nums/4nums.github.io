@@ -497,7 +497,7 @@ function tickclock(){
  
 
 function game_draw(isclock){ // 0) status1, 1) game_type, 2) time, time_left, 3) solved, unsolved, 4) this game history
-	draw_text(Array(width/20,height *1.06), "Make 24 from 4nums.com",  "#555",   + (width/15) +"px sans-serif");
+	draw_text(Array(width/20,height *1.06), "Use all 4 numbers to make 24!",  "#555",   + (width/15) +"px sans-serif");
 	if (status1 == 6)
 	{	var scoretext ="Solved  in "+ (game_tick1/100)+  " seconds";
 		draw_rect(Array(0,0, width, height), "#fff", 0, "#000"); // clean the whole region
