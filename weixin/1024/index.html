@@ -1,0 +1,353 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="pragma" content="no-cache" />
+<title>1024游戏! 5个24点题目测智商！来自4shu.net 24点游戏网</title>
+
+<link href="http://24theory.github.io/weixin/1024/main.css" rel="stylesheet" type="text/css">
+<meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0, maximum-scale=1, user-scalable=no, minimal-ui">
+
+<meta property="og:title" content="1024 game"/>
+<meta property="og:site_name" content="1024 game"/>
+<meta property="og:description" content="solve 10 math 24 puzzles!"/>
+
+
+<script language="javascript" src="http://24theory.github.io/weixin/1/jq.mobi.min.js"></script>
+
+ <script type="text/javascript" src="http://24theory.github.io/weixin/1024/challenge.js"> </script> 
+ <script type="text/javascript" src="http://24theory.github.io/weixin/1024/str.js"></script> 
+ <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-8952689943698685",
+    enable_page_level_ads: true
+  });
+</script>
+</head>
+<div id="page_body">
+
+<body style="margin:0px 0 0 0;padding:0 0px;" onload = "init_game()" id = canvas_body>
+<style>p1 {font-size:25px; } </style>
+   
+	<div style="font-size:15px; font-weight:bold;margin-top:1px; padding:0px;" align="center">
+	5个24点测智商！加订阅号: <strong style="color:red; font-size:25px;">4shu</strong>  </div>
+
+
+  
+ </div>
+ <div style=" text-align:center;">
+  	    <canvas id="canvasID"    width= "width=device-width" height = 360  style="border:solid 1px #444444;" > Your browser does not support HTML5, get a newer one. </canvas> 
+</div>  	    
+  <p class="game-explanation" style="margin:1px 0 1px 0px;line-height:20px;">
+	<div style="float:center;text-align:center;font-size:14px;">
+	<strong >玩法：</strong><span style="font-size:14px;"> 用4个数和加减乘除算出<strong style="color:red">24</strong>.
+	点&larr;取消上一步,<br> 点&rarr;重复取消的步, 
+		点<strong style="color:blue">&#8853;</strong>全加, 点<strong style="color:purple">&#8855;</strong>全乘.
+	</span></div> 
+  </p>
+
+ 
+<div style="margin:0 1px;padding:1px; border:1px dashed #ccc;color:red;float:center;text-align:center;">
+	<div id="message" style="color:blue;"> </div>	<img src="http://24theory.github.io/weixin/1/24.png"   style="width:10px;">
+
+	<!--点右上角按钮 <img src="http://24theory.github.io/weixin/1/wxshare.png" style="width:20px;" />，分享结果到朋友圈。-->
+	<img src="http://24theory.github.io/weixin/1/24.png"   style="width:10px;">
+</div>
+<center>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- mobile0 -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:320px;height:100px"
+     data-ad-client="ca-pub-8952689943698685"
+     data-ad-slot="7327813157"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</center>
+<div style="font-size:15px; font-weight:bold;margin-top:3px; margin-left:20px;padding:1px;" align="left">
+<br><center> 长按以下图片并扫描加我们4shu.net的订阅号。 我们不定期给你最NB的智力题目 </center><br> 
+<img src="http://24theory.github.io/weixin/weixin.jpg" width=90%/><br>
+我们是一个24点智能微信号<br>
+你回复<strong style="color:blue;">4个数</strong>(比如1 2 12 9),我给算24点<br>
+你回复<strong style="color:blue;">1</strong>, 我给你<a href="http://24theory.github.io/weixin/today/" style="color:green;">今日高难24点题目(点击进入)</a><br>
+你回复<strong style="color:blue;">2</strong>，我给你<a href="http://24theory.github.io/weixin/1024/" style="color:green;">1024游戏(点击进入)</a><br>
+你回复<strong style="color:blue;">24</strong>，我给你4个数算24点提高脑力<br>
+你回复<strong style="color:blue;">2048</strong>,我给你<a href="http://24theory.github.io/weixin/1/" style="color:green;">2048游戏</a><br>
+你回复<strong style="color:blue;">a</strong>,我给<a href="http://24theory.github.io/weixin/brain/" style="color:green;">脑筋急转弯</a><br>
+你回复<strong style="color:blue;">b</strong>,我给<a href="http://24theory.github.io/weixin/struggle/" style="color:green;">无产阶级24点理论家说</a><br>
+你回复<strong style="color:blue;">p,pm</strong>或<strong style="color:blue;">pm25</strong>,我给你实时<a href="http://24theory.github.io/weixin/beijingpm25/" style="color:green;">北京PM2.5信息</a><br>
+你对我说其他的话, 我拿你也没办法，我给你帮助<br>
+</div>
+<div style="background:rgba(0,0,0,0.9);position:absolute;top:0px; left:0px; width:100%;height:100%;z-index:10000;display:none;" id="result_div">
+	<p style=" text-align:center;padding-left:50px;"><!--<img src="http://24theory.github.io/weixin/1/share.png?3" width="154"/>--></p>
+	<div style="width:220px;height:280px; top:20px; left:25px;background:rgba(0,0,0,0.3);border:1px rgba(255,255,255,0.3) solid;border-radius:6px;padding:15px; text-align:center; position:relative;">
+		<i style="position:absolute; background:url(http://24theory.github.io/weixin/1/close.png); width:29px;height:29px; background-size:29px 29px; top:-10px;right:-14px;" onclick="forward1();"></i>
+		<center style="font-size:17px;margin-top:5px;color:#eee;" id="result_content">
+		<span style="font-size:36px;"><font color="#fce700">2857!</font></span>
+		 
+		</center>
+
+	</div>
+</div>
+
+
+
+<br/>
+<script>
+var cur_score = 0;
+var max_number = 11;
+var show_end_tips = 1;
+
+var number_tips = 0;
+var percen_score = 0;
+var final_line;
+function set_para()
+{
+	var ii;
+	var bonus = 0;
+ 	for (ii = 0; ii < time_array.length; ii ++)
+	{
+		if (time_array[ii] > 0)
+		{
+			if (Number(time_array[ii])/100 < 25)
+			{
+				bonus += (25 - Number(time_array[ii])/100 );
+			}
+		}
+	}
+
+ 	cur_score = Math.ceil(Number(score_all) + bonus); 
+	if (cur_score <= 33)
+	{
+		percen_score = cur_score * 25 /33 ;		
+	}
+	else if (cur_score <=100)
+	{
+		percen_score = (cur_score - 33) * 25 /67 + 25;
+	}
+	else if (cur_score <=133)
+	{
+		percen_score = (cur_score - 100) * 25 /33 + 50;
+	}
+	else if (cur_score <=166){
+		percen_score = (cur_score - 133) * 23 /33 + 75;
+	}
+	else if (cur_score <=200){
+		percen_score = (cur_score - 166) * 1 /34 + 98;
+	}
+	else if (cur_score <250){
+		percen_score = (cur_score - 200) * 1 /50 + 99;
+	}
+	else 
+	{
+		percen_score = 99.99;
+	}
+	if (cur_score < 0.1)
+	{	
+		percen_score = 0;
+	}
+	else
+	{
+		percen_score = percen_score.toPrecision(4);
+	}
+	
+	var a11 = Math.floor(percen_score /10);
+	switch(a11){
+	case 0:
+		level_name= '石头';	
+		break;
+
+	case 1:
+		level_name= '鸵鸟';	
+		break;
+	case 2:
+		level_name= '驴';	
+		break;
+	case 3:
+	level_name= '八戒';	
+		break;
+	case 4:
+	level_name= '吕布';	
+		break;
+	case 5:
+	level_name= '路人';	
+		break;
+	case 6:
+	level_name= '宋江';	
+		break;
+	case 7:
+	level_name= '诸葛亮';	
+		break;
+	case 8:
+		level_name= '牛顿';	
+		break;
+	case 9:
+		level_name= '爱因斯坦';	
+		break;
+	}
+	if (percen_score > 95)
+				level_name= '天神';	
+	if (time_array.length == 5)
+	{
+		final_line = new Array();
+		var final_time = new Array();
+		var ii, jj; 
+		for (ii = 0; ii < 5; ii ++)
+		{
+			var sp =  all_lines[ii].split(" ");
+			var thistime, this_per; 
+			for (jj = 0; jj < 5; jj ++)
+			{
+				if (this_order[jj] == ii)
+				{					
+					thistime = Number(time_array[jj]);
+				}
+			}
+			if (thistime > 0)
+				final_line.push('难度 ' +(ii+1) + ' ('+sp[8]+ ' ' + sp[9]+ ' ' +sp[10]+ ' ' +sp[11]+ ') : ' + (thistime/100).toPrecision(3) +' 秒');
+			else
+				final_line.push('难度 ' +(ii+1) + ' ('+sp[8]+ ' ' + sp[9]+ ' ' +sp[10]+ ' ' +sp[11]+ ') : 没有算出来');
+		}
+	}
+}
+function forward1()
+{
+WeixinJSBridge.invoke('closeWindow',{},function(res){  });
+//	 window.top.location.href = "http://www.4shu.net";
+}
+function set_title()
+{
+
+	set_para();
+	
+	document.title = '1024 测验！我得了'+cur_score+'分！ 你来试试看， 能不能比我高?';
+
+	var final_message = '<span style="font-size:25px;"><font color="#fce700">'+cur_score+'分!</font></span><br/><br/>'
+		+'4shu.net (4数网) 统计了全球100多万题次<br/><br/>'
+		+'你的运算力 <font color="#fc4d35"> > '+percen_score+'％</font> 的人<br/>'
+		+'智力等级 = <span style="color:#04e5f9; font-size:20px;">'+level_name+'</span>！<br/><br/>';	
+	for (ii = 0; ii < time_array.length; ii ++)
+	{
+		final_message += '<span  style="color:green; font-size:10px;">'+final_line[ii]+'</span><br/> '
+	}
+	$('#result_div').show();
+		
+		$('#result_content').html(final_message);		
+}
+        var imgUrl = 'http://24theory.github.io/weixin/1/24.png';
+        var lineLink = 'http://24theory.github.io/weixin/1024/';
+        var descContent = '我得了'+cur_score+'分！还行吧';
+        var shareTitle = '有益智力游戏1024';
+        var appid = '';
+        
+        function shareFriend() {
+		set_para();
+		descContent = '我得了'+cur_score+'分! 运算智力>全球 %'+ percen_score +' 的人. \n\r' + '智力等级 = '+level_name;
+            WeixinJSBridge.invoke('sendAppMessage',{
+                "appid": appid,
+                "img_url": imgUrl,
+                "img_width": "200",
+                "img_height": "200",
+                "link": lineLink,
+                "desc": descContent,
+                "title": shareTitle
+            }, function(res) {
+                //_report('send_msg', res.err_msg);
+            })
+        }
+        function shareTimeline() {
+		set_para();
+	descContent = '我得了'+cur_score+'分! 运算智力>全球 %'+ percen_score +' 的人. \n\r' + '智力等级 = '+level_name;
+          WeixinJSBridge.invoke('shareTimeline',{
+                "img_url": imgUrl,
+                "img_width": "200",
+                "img_height": "200",
+                "link": lineLink,
+                "desc": descContent,
+                "title": shareTitle
+            }, function(res) {
+                   //_report('timeline', res.err_msg);
+            });
+        }
+        function shareWeibo() {
+		set_para();
+descContent = '我得了'+cur_score+'分! 运算智力>全球 %'+ percen_score +' 的人. \n\r' + '智力等级 = '+level_name;
+				WeixinJSBridge.invoke('shareWeibo',{
+                "content": descContent,
+                "url": lineLink,
+            }, function(res) {
+                //_report('weibo', res.err_msg);
+            });
+        }
+        // ???????????????????WeixinJSBridgeReady???
+        document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+            // ?????
+            WeixinJSBridge.on('menu:share:appmessage', function(argv){
+                shareFriend();
+            });
+            // ??????
+            WeixinJSBridge.on('menu:share:timeline', function(argv){
+                shareTimeline();
+            });
+            // ?????
+            WeixinJSBridge.on('menu:share:weibo', function(argv){
+                shareWeibo();
+            });
+        }, false);
+
+</script>
+</body></div>
+
+
+<div class="container"  >
+	<div class="heading">
+		<div class="title" style="width:320px;float:center;">
+			<div style="font-size:20px; font-weight:bold;margin-top:5px; padding:0px; color:green">24点游戏是最好的大脑体操</div>
+		</div>
+		<div style="margin:0 10px;padding:5px; style="color:blue;">
+			用4个数字和 + - x / 四则运算快速算出24来. 24点权威站 <a href="http://www.4shu.net">4shu.net(4数网)</a> 提供的免费手机应用有 iOS,安卓 一体的排名榜. 你也下载个24点挑战赛?
+		</div>
+   </div>
+	
+	
+	<div style="font-size:15px;margin-top:5px;margin-left:0px; padding:0px;">
+<img src="http://24theory.github.io/weixin/1/24.png"   style="width:0px;height:0;">
+		<a href="http://24theory.github.io/weixin/1/ios.html"><img src="http://24theory.github.io/weixin/1/ios2.png" width=90%/></a>
+		<a href="http://24theory.github.io/weixin/1/android.html"><img src="http://24theory.github.io/weixin/1/android1.png" width=90%/></a>
+		<a href="http://www.4shu.net"><img src="http://24theory.github.io/weixin/1/24lilun1.png" width=90%/></a>
+	</div>
+</div>
+
+<center>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- mobile0 -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:320px;height:100px"
+     data-ad-client="ca-pub-8952689943698685"
+     data-ad-slot="7327813157"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</center>
+<div style="margin:0 10px;padding:5px; border:1px dashed #ccc;color:red;">
+	点右上角按钮 <img src="http://24theory.github.io/weixin/1/wxshare.png" style="width:20px;" />，分享24点到朋友圈。
+	<div id="message" style="color:blue;"> </div>
+</div>
+
+
+
+	
+	<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-50767006-1', '24theory.github.io');
+  ga('send', 'pageview');
+
+</script>
+	
+</html>

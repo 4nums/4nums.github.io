@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8">
+<title>有益智力游戏24点!</title>
+
+<link href="1/main.css" rel="stylesheet" type="text/css">
+<meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0, maximum-scale=1, user-scalable=no, minimal-ui">
+
+<meta property="og:title" content="24 game"/>
+<meta property="og:site_name" content="24 game"/>
+
+
+<script language="javascript" src="http://24theory.github.io/weixin/1/jq.mobi.min.js"></script>
+</head>
+<body style="margin:5px 0 0 0;padding:0 10px;">
+
+<div class="container"  >
+	<div class="heading">
+		<div class="title" style="width:320px;float:center;">
+			<div style="font-size:20px; font-weight:bold;margin-top:5px; padding:0px; color:green">24点游戏是最好的大脑体操</div>
+		</div>
+		<div style="margin:0 10px;padding:5px; style="color:blue;">
+			用4个数字和 + - x / 四则运算快速算出24来. 24点权威站 <a href="http://www.4shu.net">4shu.net(4数网)</a> 提供的免费手机应用有 iOS,安卓 一体的排名榜. 你也下载个24点挑战赛?
+		</div>
+   </div>
+	
+	
+	<div style="font-size:15px;margin-top:5px;margin-left:0px; padding:0px;">
+		<a href="1/ios.html"><img src="1/ios2.png" width=90%/></a>
+		<a href="1/android.html"><img src="1/android1.png" width=90%/></a>
+		<a onclick="go_html();"><img src="1/24lilun1.png" width=90%/></a>
+	</div>
+</div>
+
+<div style="clear:both; height:10px;">&nbsp;</div>
+<div style="margin:0 10px;padding:5px; border:1px dashed #ccc;color:red;">
+	点右上角按钮 <img src="http://24theory.github.io/weixin/1/wxshare.png" style="width:20px;" />，分享24点到朋友圈。
+	<div id="message" style="color:blue;"> </div>
+</div>
+  <object type="text/html"   width = 100% height = 600 px data="http://www.24lilun.com/apps/copyocf1.php"></object>
+
+ <script>
+  function down_ios()
+{
+	var x=window.open("height=200,width=200");
+x.document.open();
+x.document.write('<meta http-equiv="refresh" content="0; url=https://itunes.apple.com/us/app/24dian-tiao-zhan-sai/id697987315?ls=1&mt=8&uo=4" target="itunes_store"/>');
+x.document.close();
+ //	$.get('android.html', function(re){
+//	  	self.location.href='http://android.app.qq.com/android/appdetail.jsp?appid=10096899';
+//	});
+}
+ function down_android()
+{
+	var x=window.open();
+x.document.open("height=400,width=400", '_system', 'location=yes');
+x.document.write('<meta http-equiv="refresh" content="0; url=http://android.app.qq.com/android/appdetail.jsp?appid=10096899" />');
+x.document.close();
+ //	$.get('android.html', function(re){
+//	  	self.location.href='http://android.app.qq.com/android/appdetail.jsp?appid=10096899';
+//	});
+}
+ function go_html()
+ {
+	var x=window.open();
+x.document.open();
+x.document.write('<meta http-equiv="refresh" content="0; url=http://www.4shu.net" />');
+x.document.close();
+ }
+ </script>
+ 
+ 
+ 
+<script>
+
+var cur_score = 0; 
+        var imgUrl = 'http://24theory.github.io/weixin/1/24.png';
+        var lineLink = 'http://24theory.github.io/weixin/24lilun.html';
+        var descContent = '24点智力游戏不错,推荐';
+        var shareTitle = '4数网4shu.net新作';
+        var appid = '';
+        
+        function shareFriend() {
+		descContent = '24点智力游戏不错,推荐 \n\r';
+descContent += '<'+messages[Math.floor((Math.random()*messages.length))]+'>';
+            WeixinJSBridge.invoke('sendAppMessage',{
+                "appid": appid,
+                "img_url": imgUrl,
+                "img_width": "200",
+                "img_height": "200",
+                "link": lineLink,
+                "desc": descContent,
+                "title": shareTitle
+            }, function(res) {
+                //_report('send_msg', res.err_msg);
+            })
+        }
+        function shareTimeline() {
+descContent = '24点智力游戏不错,推荐 \n\r';
+descContent += '<'+messages[Math.floor((Math.random()*messages.length))]+'>';            WeixinJSBridge.invoke('shareTimeline',{
+                "img_url": imgUrl,
+                "img_width": "200",
+                "img_height": "200",
+                "link": lineLink,
+                "desc": descContent,
+                "title": shareTitle
+            }, function(res) {
+                   //_report('timeline', res.err_msg);
+            });
+        }
+        function shareWeibo() {
+descContent = '24点智力游戏不错,推荐 \n\r';
+descContent += '<'+messages[Math.floor((Math.random()*messages.length))]+'>';
+            WeixinJSBridge.invoke('shareWeibo',{
+                "content": descContent,
+                "url": lineLink,
+            }, function(res) {
+                //_report('weibo', res.err_msg);
+            });
+        }
+        // ???????????????????WeixinJSBridgeReady???
+        document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+            // ?????
+            WeixinJSBridge.on('menu:share:appmessage', function(argv){
+                shareFriend();
+            });
+            // ??????
+            WeixinJSBridge.on('menu:share:timeline', function(argv){
+                shareTimeline();
+            });
+            // ?????
+            WeixinJSBridge.on('menu:share:weibo', function(argv){
+                shareWeibo();
+            });
+        }, false);
+
+var messages=new Array("超赞益智数学游戏,全球排名榜!");
+
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-49632452-1', '24theory.github.io');
+  ga('send', 'pageview');
+</script>
+</body>
+</html>
