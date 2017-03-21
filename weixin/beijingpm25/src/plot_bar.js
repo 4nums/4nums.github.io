@@ -1,7 +1,17 @@
  function plot_bar(data_vec)
 {
 }
+function pm25_color(pm25)
+{
+ if (pm25< 35.5){  
+   	    colorarray =  color_array(Math.log(pm25), Math.log(5.5), Math.log(35.5), [0,255,0], [255,255,0]);
+        }
+   	else{
+   	colorarray =  color_array(Math.log(pm25), Math.log(35.5), Math.log(200), [255,255,0], [255,0,0]);}
+    return "#"+toHex(colorarray[0])+toHex(colorarray[1])+toHex(colorarray[2]);
+} 
 
+ 
 function color_array(val, lower_val, upper_val, lower_rgb, upper_rgb)
 {
 	var ii;
