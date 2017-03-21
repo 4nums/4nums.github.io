@@ -10,7 +10,9 @@ function pm25_color(pm25)
    	colorarray =  color_array(Math.log(pm25), Math.log(35.5), Math.log(200), [255,255,0], [255,0,0]);}
     return "#"+toHex(colorarray[0])+toHex(colorarray[1])+toHex(colorarray[2]);
 } 
-
+function toHex(d) {
+    return  ("0"+(Number(d).toString(16))).slice(-2).toUpperCase()
+}
  
 function color_array(val, lower_val, upper_val, lower_rgb, upper_rgb)
 {
