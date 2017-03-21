@@ -1,110 +1,5 @@
-// this js is for chartnew.js
-function tofix1(a, precision)
+ function plot_bar(data_vec)
 {
-    for (ii = 0; ii < a.length; ii ++)
-        a[ii] = a[ii].toFixed(precision);
-    return a;
-}
-  
-function split_array(a)
-{    var b = [];
-    for (ii = 0; ii < a.length; ii +=2)
-    {
-        b.push(a[ii]);
-        }
-        for (ii = 1; ii < a.length; ii +=2)
-    {
-        b.push(a[ii]);
-        }
-        return b;
-} 
- 
- function deviationValue(params) {
-	var data = params.data;
-	var datasetNr = params.datasetNr;
-	return(data.datasets[datasetNr].deviationValue);
- }
-
-function data_line_errorbar(data_vec,num_shown,boundary_vec, errorbar_vec)
-{
-     var mydata = {labels:[], datasets:[{fillColor:[], strokeColor:[], data:[], inGraphDataShow:[],deviationValue:[], drawMathDeviation: "deviationValue", deviationWidth: 0}]}
-     for (ii = 0; ii < num_shown; ii++)
-    {
-        mydata.labels[ii] = ' ';
-        mydata.datasets[0].data[ii] = data_vec[ii];  
-        mydata.datasets[0]. fillColor[ii] = "rgba(255,255,255,0.1)";      
-        mydata.datasets[0]. strokeColor[ii] = "rgba( 170,170,170,1)";   
-        mydata.datasets[0].inGraphDataShow[ii] =0;
-         mydata.datasets[0].deviationValue[ii] =errorbar_vec[ii];
- 
-    } 
-    return mydata;
-}
-function data_line (data_vec,num_shown,boundary_vec)
-{
-     var mydata = {labels:[], datasets:[{fillColor:[], strokeColor:[], data:[], inGraphDataShow:[]}]}
-     for (ii = 0; ii < num_shown; ii++)
-    {
-        mydata.labels[ii] = ' ';
-        mydata.datasets[0].data[ii] = data_vec[ii];  
-        mydata.datasets[0]. fillColor[ii] = "rgba(255,255,255,0.1)";      
-        mydata.datasets[0]. strokeColor[ii] = "rgba( 170,170,170,1)";   
-        mydata.datasets[0].inGraphDataShow[ii] =0;
- 
-    } 
-    return mydata;
-}
-function assigncolor1(area,ctx,data,statData,posi,posj,othervars)
-{ 
-    var colorarray = [0,0,0];
-   var boundary_vec =  [5.5, 35.5,200];
-  if(posi==0)
-  {
-      var a = 1*data.datasets[posi].data[posj];
-      if (a < boundary_vec[1]){  
-   	    colorarray =  color_array(Math.log(a), Math.log(boundary_vec[0]), Math.log(boundary_vec[1]), [0,255,0], [255,255,0]);
-        }else{
-   	colorarray =  color_array(Math.log(a), Math.log(boundary_vec[1]), Math.log(boundary_vec[2]), [255,255,0], [255,0,0]);}
-    }  
-     return ("rgba(" + colorarray[0]+","+colorarray[1]+","+colorarray[2]+",1)");
-}
- 
-   
-function data_bar(data_vec,num_shown, boundary_vec)
-{
-    
-
-    var mydata = {labels:[], datasets:[{fillColor:[], strokeColor:[], data:[],     inGraphDataFontColor:[],inGraphDataShow:[]}]}
-    var colorarray=[0,0,0]; 
-    for (ii = 0; ii < num_shown; ii++)
-    {
-        mydata.labels[ii] = ' ';
-        mydata.datasets[0].data[ii] = data_vec[ii];  
-        if (data_vec[ii] < boundary_vec[1]){  
-   	    colorarray =  color_array(Math.log(data_vec[ii]), Math.log(boundary_vec[0]), Math.log(boundary_vec[1]), [0,255,0], [255,255,0]);
-        }
-   	else{
-   	colorarray =  color_array(Math.log(data_vec[ii]), Math.log(boundary_vec[1]), Math.log(boundary_vec[2]), [255,255,0], [255,0,0]);}
-        mydata.datasets[0]. fillColor[ii] =  "rgba(" + colorarray[0]+","+colorarray[1]+","+colorarray[2]+",1)";
-        mydata.datasets[0]. strokeColor[ii] = "rgba( 170,170,170,1)";  
-        mydata.datasets[0]. pointColor = "rgba( 1,7,5,1)";
-        mydata.datasets[0]. pointStrokeColor = "rgba( 1,7,5,1)";
-        mydata.datasets[0].inGraphDataShow[ii] =0;
-          mydata.datasets[0].inGraphDataFontColor[ii] = "black" ;
-
-    } 
-    mydata.datasets[0]. strokeColor[num_shown-1] = "rgba( 0, 0, 0,1)";  
-    return mydata;
-}
-
-function assigncolor(area,ctx,data,statData,posi,posj,othervars)
-{ 
-  if(posi==0 && 1*data.datasets[posi].data[posj]<35.5) return("BLUE");
-  else return("RED");
-}
-
-function toHex(d) {
-    return  ("0"+(Number(d).toString(16))).slice(-2).toUpperCase()
 }
 function pm25_color(pm25)
 {
@@ -115,7 +10,10 @@ function pm25_color(pm25)
    	colorarray =  color_array(Math.log(pm25), Math.log(35.5), Math.log(200), [255,255,0], [255,0,0]);}
     return "#"+toHex(colorarray[0])+toHex(colorarray[1])+toHex(colorarray[2]);
 } 
-
+function toHex(d) {
+    return  ("0"+(Number(d).toString(16))).slice(-2).toUpperCase()
+}
+ 
 function color_array(val, lower_val, upper_val, lower_rgb, upper_rgb)
 {
 	var ii;
