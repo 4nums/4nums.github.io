@@ -65,8 +65,8 @@ var levelaqi = aqi_level(last3d1[71]);
 var levelaqicn = aqi_levelcn(last3d1[71]);
 var fontcolor = "white";
 if (levelaqi <=1){ fontcolor = "black";}
-var text1 = "最新更新时间: "+ lastupdatetime[1] +"月" + lastupdatetime[2] + "日" + lastupdatetime[3] +"时15分<br> PM2.5颗粒浓度 <span style=\"background: "+  pm25_color (last3d1[71])+"; color:"+fontcolor+"\">"+  last3d1[71]+"</span> 微克每立方米";
-text1 = text1 +"<br> 空气质量指数 <span style=\"background: "+  pm25_color (last3d1[71])  +"; color:"+fontcolor+"\">"+ PM25_to_AQI (last3d1[71]) +" (" + aqilevel_words(levelaqi) + ")</span>"
+var text1 = "最新更新时间: "+ lastupdatetime[1] +"月" + lastupdatetime[2] + "日" + lastupdatetime[3] +"时15分<br> PM2.5颗粒浓度 <span style=\"background: "+  aqilevel_color(levelaqi)  +"; color:"+fontcolor+"\">"+  last3d1[71]+"</span> 微克每立方米";
+text1 = text1 +"<br> 空气质量指数 <span style=\"background: "+  aqilevel_color(levelaqi)  +"; color:"+fontcolor+"\">"+ PM25_to_AQI (last3d1[71]) +" (" + aqilevel_words(levelaqi) + ")</span>"
 document.getElementById("updatetime").innerHTML= text1; 
 if (levelaqicn <=1){ fontcolor = "black";}
 var text2 ="国家标准空气质量指数: "+"<span style=\"background: "+  aqilevel_color(levelaqicn)  +"; color: "+fontcolor+"\">"+ PM25_to_AQICN (last3d1[71]) +" (" + aqilevel_words(levelaqicn) + ")</span>";
