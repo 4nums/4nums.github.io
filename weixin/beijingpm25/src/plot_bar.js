@@ -178,17 +178,17 @@ function PM25_to_AQICN ( pm25 )
 function aqilevel_words(level)
 {
 if (level ==0){
-        return "å¥½, å¤§å£å¸";}
+        return "好, 大口吸";}
     else if (level ==1){
-        return "ä¸­ç­‰, å¸";}
+        return "中等, 吸";}
     else if ( level ==2){
-        return "ä¸é€‚äºŽæ•æ„Ÿäººç¾¤, æ‚ ç€å¸";}
+        return "不适于敏感人群, 悠着吸";}
     else if ( level ==3){
-        return "ä¸å¥åº·, å°½é‡åˆ«å¸";}
+        return "不健康, 尽量别吸";}
     else if ( level ==4){
-        return "å¾ˆä¸å¥åº·, åˆ«å¸";}
+        return "很不健康, 别吸";}
     else{
-        return "æœ‰æ¯’, åˆ«å‡ºé—¨";}
+        return "我去, 别出门";}
 }
 function aqilevel_color(level)
 {
