@@ -85,7 +85,7 @@ for (ii = 0; ii < num_shown; ii++)
 	    colorarray =  color_array(Math.log(last3d1[ii]), Math.log(5.5), Math.log(35.5), [0,255,0], [255,255,0]);
      }
 	else{
-	colorarray =  color_array(Math.log(last3d1[ii]), Math.log(35.5), Math.log(200), [255,255,0], [255,0,0]);}
+	colorarray =  color_array(Math.log(last3d1[ii]), Math.log(55.5), Math.log(200), [255,255,0], [255,0,0]);}
      mydata.datasets[0]. fillColor[ii] =  "rgba(" + colorarray[0]+","+colorarray[1]+","+colorarray[2]+",1)";
      mydata.datasets[0]. strokeColor[ii] = "rgba( 170,170,170,1)";  
      mydata.datasets[0]. pointColor = "rgba( 1,7,5,1)";
@@ -107,12 +107,12 @@ var mydata1 = {
 	] 
 } 
 var mydata3 = {labels:[], datasets:[{fillColor:[], pointColor:[], data:[]}, {fillColor:[], pointColor:[], data:[]}]}
-var boundaqi1 = PM25_to_AQI(5.5),boundaqi2 = PM25_to_AQI(35.5),boundaqi3 = PM25_to_AQI(200);
+var boundaqi1 = PM25_to_AQI(5.5),boundaqi2 = PM25_to_AQI(55.5),boundaqi3 = PM25_to_AQI(200);
 for (ii = 0; ii < num_shown; ii++)
 {
     mydata3.labels[ii] = ii;
     mydata3.datasets[0].data[ii] =     last3d1[ii];  
-    if (last3d1[ii] < 35.5){  
+    if (last3d1[ii] < 55.5){  
 	    colorarray =  color_array(Math.log(PM25_to_AQI (last3d1[ii])), Math.log(boundaqi1), Math.log(boundaqi2), [0,255,0], [255,255,0]);
      }
 	else{
