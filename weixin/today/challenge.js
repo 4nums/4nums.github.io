@@ -87,7 +87,6 @@ function getname() {
 function set_para()
 {
 	cur_score = game_tick;
-	alert(game_tick/100);
 	var name1 = getname();
 }
  
