@@ -68,7 +68,7 @@ function get_tail()
 function getname() { 
 	if (cur_score >= 5)
 	{
-		var person = prompt( "          本次成绩： " + Math.floor(cur_score/100) + "秒 \r\n         请输入你的名字(长度<8):", "");
+		var person = prompt( "          本次成绩： " + (cur_score/100) + "秒 \r\n         请输入你的名字(长度<8):", "");
 		if (person == null || person == "") {
 				if ( person == ""){
 					person = prompt("   名字不能为空(长度<10):", "");
