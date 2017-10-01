@@ -42,59 +42,7 @@ var num_ratio = 2/5, marg_ratio =  0.2, rect_thin_width = 3, rect_fat_width = 10
 var quit_ratio = 0.8;
 var the_string="";
 
-function init_game1(gamestr)
-{
-	if (get_tail()==0)
-	{ var str1 = window.location.href;
-		document.getElementById( "link1" ).innerHTML ="<a href ="+str1.substring(0,str1.length-5) +">返回游戏</a><br><br>";
-		document.getElementById( "main1" ).innerHTML =  "<iframe src='http://www.4shu.net/cgi-bin/wgame/today2.php' width='400' height='600' frameborder='2' border='2'><iframe>";
-	}
-	else{
-		document.getElementById( "link1" ).innerHTML ="<a href ="+window.location.href +"?rank>查看排名</a><br><br>";
-		init_game(gamestr);
-	}
-}
-function get_tail()
-{
-	var str1 = window.location.href;
-	if (str1.substring( str1.length - 4,  str1.length )==="rank")
-	{	return 0;
-		}
-		else 
-	{
-		return 1;
-	}
-}
-function getname() { 
-	if (cur_score >= 5)
-	{
-		var person = prompt( "          本次成绩： " + Math.floor(cur_score/100) + "秒 \r\n         请输入你的名字(长度<8):", "");
-		if (person == null || person == "") {
-				if ( person == ""){
-					person = prompt("   名字不能为空(长度<10):", "");
-			}
-			window.location.replace(window.location.href);  
-		} else {
-			var final_desti = "http://www.4shu.net/cgi-bin/wgame/today1.php?a=" +scramble(quad_all[0].replace(/ /g,''), person, cur_score);
-				window.location.replace(final_desti); 
-			
-		} 
-		return person;
-	}
-	else
-		alert('   这么快？ 您没事吧？');
-}
-function set_para()
-{
-	cur_score = game_tick;
-	alert(game_tick/100);
-	var name1 = getname();
-}
- 
-function scramble(tail, name, score)
-{
-	return tail + "{" + score   +"{"+ name.replace(" ", "");
-}
+
 function arraytostring(array1){
 	var str1 = " ";
 	for (ii = 0; ii < array1.length; ii ++)

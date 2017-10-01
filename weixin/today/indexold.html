@@ -6,7 +6,7 @@
 <meta charset="utf-8">
 <title>今日24点! 来自 4shu.net 24点游戏网</title>
 
-<link href="http://24theory.github.io/weixin/1024/main.css" rel="stylesheet" type="text/css">
+<link href="../../weixin/1024/main.css" rel="stylesheet" type="text/css">
 <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0, maximum-scale=1, user-scalable=no, minimal-ui">
 
 <meta property="og:title" content="24 game"/>
@@ -14,9 +14,9 @@
 <meta property="og:description" content="今日24点!"/>
 
 
-<script language="javascript" src="http://24theory.github.io/weixin/1/jq.mobi.min.js"></script>
+<script language="javascript" src="../../weixin/1/jq.mobi.min.js"></script>
 
- <script type="text/javascript" src="challenge.js"> </script>
+ <script type="text/javascript" src="../../weixin/today/challenge.js"> </script>
  <script type="text/javascript" src="http://4shu.net/data/dailygame.js?1500"> </script> 
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <script>
@@ -28,7 +28,7 @@
  </head>
 <div id="page_body">
 
-<body style="margin:0px 0 0 0;padding:0 0px;" onload = "init_game1(gamestr)" id = canvas_body>
+<body style="margin:0px 0 0 0;padding:0 0px;" onload = "init_game(gamestr)" id = canvas_body>
 <style>p1 {font-size:25px; } </style>
    
 	<div style="font-size:15px; font-weight:bold;margin-top:1px; padding:0px;" align="center">
@@ -37,9 +37,6 @@
 
   
  </div>
-  <div style=" text-align:center;" id=link1> </div> 
-<div style=" text-align:center;" id=main1>
-
  <div style=" text-align:center;">
   	    <canvas id="canvasID"    width= "width=device-width" height = 360  style="border:solid 1px #444444;" > Your browser does not support HTML5, get a newer one. </canvas> 
 </div>  	    
@@ -54,9 +51,9 @@
  
 <div style="margin:0 1px;padding:1px; border:1px dashed #ccc;color:red;float:center;text-align:center;">
 	<div id="message" style="color:blue;"> </div>
-	<img src="http://24theory.github.io/weixin/1/24.png"   style="width:10px;">
-	<!--点右上角按钮 <img src="http://24theory.github.io/weixin/1/wxshare.png" style="width:20px;" />，分享结果到朋友圈。-->
-	<img src="http://24theory.github.io/weixin/1/24.png"   style="width:10px;">
+	<img src="../../weixin/1/24.png"   style="width:10px;">
+	<!--点右上角按钮 <img src="../../weixin/1/wxshare.png" style="width:20px;" />，分享结果到朋友圈。-->
+	<img src="../../weixin/1/24.png"   style="width:10px;">
 
 </div>
 <center>
@@ -72,19 +69,20 @@
 </center>
 <div style="font-size:12px; font-weight:bold;margin-top:3px; margin-left:20px;padding:1px;" align="left">
 <br><center> 长按以下图片并扫描加我们4shu.net的订阅号。 我们不定期给你最NB的智力题目 </center><br> 
-<img src="http://24theory.github.io/weixin/weixin.jpg" width=90%/><br>
+<img src="../../weixin/weixin.jpg" width=90%/><br>
 <br>
 
 
 我们是一个24点智能微信号<br>
-你回复<strong style="color:blue;">4个数</strong>(比如1 2 12 9),我给算24点<br>
-你回复<strong style="color:blue;">1</strong>, 我给你<a href="http://24theory.github.io/weixin/today/" style="color:green;">今日高难24点题目(点击进入)</a><br>
-你回复<strong style="color:blue;">2</strong>，我给你<a href="http://24theory.github.io/weixin/1024/" style="color:green;">1024游戏(点击进入)</a><br>
-你回复<strong style="color:blue;">24</strong>，我给你4个数算24点提高脑力<br>
-你回复<strong style="color:blue;">2048</strong>,我给你<a href="http://24theory.github.io/weixin/1/" style="color:green;">2048游戏</a><br>
-你回复<strong style="color:blue;">a</strong>,我给<a href="http://24theory.github.io/weixin/brain/" style="color:green;">脑筋急转弯</a><br>
-你回复<strong style="color:blue;">b</strong>,我给<a href="http://24theory.github.io/weixin/struggle/" style="color:green;">无产阶级24点理论家说</a><br>
-你回复<strong style="color:blue;">p,pm</strong>或<strong style="color:blue;">pm25</strong>,我给你实时<a href="http://24theory.github.io/weixin/beijingpm25/" style="color:green;">北京PM2.5信息</a><br>
+回复<strong style="color:blue;">4个数</strong>(比如1 2 12 9),我给算24点<br>
+<strong style="color:red;">回复5个数，我用前四个算第五个</strong><br>
+回复<strong style="color:blue;">1</strong>, 我给你<a href="../../weixin/today/" style="color:green;">今日高难24点题目(点击进入)</a><br>
+回复<strong style="color:blue;">2</strong>，我给你<a href="../../weixin/1024/" style="color:green;">1024游戏(点击进入)</a><br>
+回复<strong style="color:blue;">24</strong>，我给你4个数算24点提高脑力<br>
+回复<strong style="color:blue;">2048</strong>,我给你<a href="http://23theory.github.io/weixin/1/" style="color:green;">2048游戏</a><br>
+回复<strong style="color:blue;">a</strong>,我给<a href="../../weixin/brain/" style="color:green;">脑筋急转弯</a><br>
+回复<strong style="color:blue;">b</strong>,我给<a href="../../weixin/struggle/" style="color:green;">无产阶级24点理论家说</a><br>
+回复<strong style="color:blue;">p,pm</strong>或<strong style="color:blue;">pm25</strong>,我给你实时<a href="../../weixin/beijingpm25/" style="color:green;">北京PM2.5信息</a><br>
 你对我说其他的话, 我拿你也没办法，我给你帮助<br>
 </div>
 
@@ -93,9 +91,9 @@
 
 <center>
 <div style="background:rgba(0,0,0,0.9);position:absolute;top:0px; left:0px; width:100%;height:100%;z-index:10000;display:none;" id="result_div">
-<p style=" text-align:center;padding-left:50px;"><!--<img src="http://24theory.github.io/weixin/1/share.png?3" width="154"/>--></p> 
+<p style=" text-align:center;padding-left:50px;"><!--<img src="../../weixin/1/share.png?3" width="154"/>--></p> 
 	<div style="width:220px;height:280px; top:20px; left:25px;background:rgba(0,0,0,0.3);border:1px rgba(255,255,255,0.3) solid;border-radius:6px;padding:15px; text-align:center; position:relative;">
-		<i style="position:absolute; background:url(http://24theory.github.io/weixin/1/close.png); width:29px;height:29px; background-size:29px 29px; top:-10px;right:-14px;" onclick="forward1()";></i>
+		<i style="position:absolute; background:url(../../weixin/1/close.png); width:29px;height:29px; background-size:29px 29px; top:-10px;right:-14px;" onclick="forward1()";></i>
 
 		<center style="font-size:17px;margin-top:5px;color:#eee;" id="result_content">
 		<span style="font-size:36px;"><font color="#fce700">2857!</font></span>
@@ -116,11 +114,102 @@ var show_end_tips = 1;
 var number_tips = 0;
 var percen_score = 0;
 var final_line;
+function set_para()
+{
+	var ii;
+	var bonus = 0;
+ 	for (ii = 0; ii < time_array.length; ii ++)
+	{
+		if (time_array[ii] > 0)
+		{
+			if (Number(time_array[ii])/100 < 25)
+			{
+				bonus += (25 - Number(time_array[ii])/100 );
+			}
+		}
+	}
 
+ 	cur_score = Math.ceil(Number(score_all) + bonus); 
+	if (cur_score <= 33)
+	{
+		percen_score = cur_score * 25 /33 ;		
+	}
+	else if (cur_score <=100)
+	{
+		percen_score = (cur_score - 33) * 25 /67 + 25;
+	}
+	else if (cur_score <=133)
+	{
+		percen_score = (cur_score - 100) * 25 /33 + 50;
+	}
+	else if (cur_score <=166){
+		percen_score = (cur_score - 133) * 23 /33 + 75;
+	}
+	else if (cur_score <=200){
+		percen_score = (cur_score - 166) * 1 /34 + 98;
+	}
+	else if (cur_score <250){
+		percen_score = (cur_score - 200) * 1 /50 + 99;
+	}
+	else 
+	{
+		percen_score = 99.99;
+	}
+	if (cur_score < 0.1)
+	{	
+		percen_score = 0;
+	}
+	else
+	{
+		percen_score = percen_score.toPrecision(4);
+	}
+	
+	var a11 = Math.floor(percen_score /10);
+	switch(a11){
+	case 0:
+		level_name= '石头';	
+		break;
+
+	case 1:
+		level_name= '鸵鸟';	
+		break;
+	case 2:
+		level_name= '驴';	
+		break;
+	case 3:
+	level_name= '八戒';	
+		break;
+	case 4:
+	level_name= '吕布';	
+		break;
+	case 5:
+	level_name= '路人';	
+		break;
+	case 6:
+	level_name= '宋江';	
+		break;
+	case 7:
+	level_name= '诸葛亮';	
+		break;
+	case 8:
+		level_name= '牛顿';	
+		break;
+	case 9:
+		level_name= '爱因斯坦';	
+		break;
+	}
+	if (percen_score > 95)
+				level_name= '天神';	
+ 
+	final_line = new Array();
+	//final_line.push( ' ('+sp[8]+ ' ' + sp[9]+ ' ' +sp[10]+ ' ' +sp[11]+ ') : ' + (thistime/100).toPrecision(3) +' 秒');
+	var thistime = 10000;
+	final_line.push('dd'+ (thistime/100).toPrecision(3));
+}
 function forward1()
 {
 	WeixinJSBridge.invoke('closeWindow',{},function(res){  });
-	//window.top.location.href = "http://24theory.github.io/weixin/1024/";
+	//window.top.location.href = "../../weixin/1024/";
 }
 function set_title()
 {
@@ -129,10 +218,21 @@ function set_title()
 	var today = new Date();
 	var dd = today.getDate();
 	var mm = today.getMonth()+1; //January is 0!
+	
+	if (solved == 1)
+			document.title  = '今天的(4shu.net)24点我用了' + game_tick1/100 +'秒。 你能不能比我快?'
+		else
+			document.title  = '今天的(4shu.net)24点有难度, 你来做一下?'
+
+	var final_message = '今天是' + mm + '月' +dd + '日 <br>' + '今天的高难24你用了 <span style="color:blue;">'+ game_tick/100 + '秒</span> <br>分享, 挑战你的小伙伴!';
+	final_message += '<br><br>点右上的X 进行1024测验!';
+	final_message += '<br><br> <span style="font-size:15px;">加我们4shu.net的微信号 <strong style="color:red">4shu</strong>, 我们是史上最智能的微信公共号, 对我说4个数, 我给算24点哦</span>';
+	$('#result_div').show();
 		
+		$('#result_content').html(final_message);		
 }
-        var imgUrl = 'http://24theory.github.io/weixin/1/24.png';
-        var lineLink = 'http://24theory.github.io/weixin/today/';
+        var imgUrl = '../../weixin/1/24.png';
+        var lineLink = '../../weixin/today/';
         var descContent = '我得了'+cur_score+'分！还行吧';
         var shareTitle = '今日高难度24点';
         var appid = '';
@@ -338,12 +438,12 @@ var messages=new Array("勿忘731， 关注中央电视台新纪录片",
 		</div>
    </div>
 	
-	<img src="http://24theory.github.io/weixin/1/24.png"   style="width:0px;height:0;">
+	<img src="../../weixin/1/24.png"   style="width:0px;height:0;">
 
 	<div style="font-size:15px;margin-top:5px;margin-left:0px; padding:0px;">
-		<a href="http://24theory.github.io/weixin/1/ios.html"><img src="http://24theory.github.io/weixin/1/ios2.png" width=90%/></a>
-		<a href="http://24theory.github.io/weixin/1/android.html"><img src="http://24theory.github.io/weixin/1/android1.png" width=90%/></a>
-		<a href="http://www.4shu.net"><img src="http://24theory.github.io/weixin/1/24lilun1.png" width=90%/></a>
+		<a href="../../weixin/1/ios.html"><img src="../../weixin/1/ios2.png" width=90%/></a>
+		<a href="../../weixin/1/android.html"><img src="../../weixin/1/android1.png" width=90%/></a>
+		<a href="http://www.4shu.net"><img src="../../weixin/1/24lilun1.png" width=90%/></a>
 	</div>
 </div>
 
@@ -369,12 +469,12 @@ var messages=new Array("勿忘731， 关注中央电视台新纪录片",
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-  ga('create', 'UA-50767006-1', '24theory.github.io');
+  ga('create', 'UA-50767006-1', '4nums.github.io');
   ga('send', 'pageview');
 
 </script>
 <div style="margin:0 10px;padding:5px; border:1px dashed #ccc;color:red;">
-	<!--  点右上角按钮 <img src="http://24theory.github.io/weixin/1/wxshare.png" style="width:20px;" />，分享24点到朋友圈。 -->
+	<!--  点右上角按钮 <img src="../../weixin/1/wxshare.png" style="width:20px;" />，分享24点到朋友圈。 -->
 	<div id="message" style="color:blue;"> </div>
 </div>
 	
