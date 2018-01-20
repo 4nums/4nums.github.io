@@ -3,12 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta http-equiv="pragma" content="no-cache" />
-<title>北京 pm2.5 空气质量 </title>
+<title>比特币和以太币价格</title>
 <link href="../../weixin/1024/main.css" rel="stylesheet" type="text/css">
 <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0, maximum-scale=1, user-scalable=no, minimal-ui">
 <script language="javascript" src="../../weixin/1/jq.mobi.min
 				   "></script>
-<script type="text/javascript" src="http://beijingpm25.com/data_now/last_3days.js?v={{ Date().getTime() }}"></script> 
+<script type="text/javascript" src="http://4shu.net/data/bc/10day.js?v={{ Date().getTime() }}"></script> 
+<script type="text/javascript" src="http://4shu.net/data/bc/3month.js?v={{ Date().getTime() }}"></script> 
+<script type="text/javascript" src="http://4shu.net/data/bc/2year.js?v={{ Date().getTime() }}"></script> 
  
  		<script src="src/newchartmin.js"></script>
  		<script src="src/plot_bar.js"></script>
@@ -39,7 +41,7 @@
 <style>p1 {font-size:25px; } </style>
    
 	<div style="font-size:15px; color:green; font-weight:bold;margin-top:1px; padding:0px;" align="center"; >
-	最近72小时北京空气质量 <strong  font-size:21px;">PM2.5浓度</strong>  </div>
+	最近90小时比特币价格   </div>
  
    </div>
 <div style=" text-align:center; font-size:15px;" style="width: 100%"> 
@@ -65,14 +67,7 @@ var levelaqi = aqi_level(last3d1[71]);
 var levelaqicn = aqi_levelcn(last3d1[71]);
 var fontcolor = "white";
 if (levelaqi <=1){ fontcolor = "black";}
-var text1 = "最新更新时间: "+ lastupdatetime[1] +"月" + lastupdatetime[2] + "日" + lastupdatetime[3] +"时15分<br> PM2.5颗粒浓度 <span style=\"background: "+  pm25_color(last3d1[71])    +"; color:"+fontcolor+"\">"+  last3d1[71]+"</span> 微克每立方米";
-text1 = text1 +"<br> 空气质量指数 <span style=\"background: "+  pm25_color(last3d1[71])    +"; color:"+fontcolor+"\">"+ PM25_to_AQI (last3d1[71]) +" (" + aqilevel_words(levelaqi) + ")</span>"
-document.getElementById("updatetime").innerHTML= text1; 
-if (levelaqicn <=1){ fontcolor = "black";}
-var text2 ="国家标准空气质量指数: "+"<span style=\"background: "+  aqilevel_color(levelaqicn)  +"; color: "+fontcolor+"\">"+ PM25_to_AQICN (last3d1[71]) +" (" + aqilevel_words(levelaqicn) + ")</span>";
-document.getElementById("updatetimecn").innerHTML= text2; 
-document.title ="北京PM2.5浓度"+last3d1[71] +",空气指数" +  PM25_to_AQI (last3d1[71]) +" (" + aqilevel_words(levelaqi) + ")";
-document.title = document.title +lastupdatetime[2]+"日"+lastupdatetime[3]+"点数据.点击更新"
+
 
 var mydata = {labels:[], datasets:[{fillColor:[], strokeColor:[], data:[]}]}
 var num_shown = 72,ii;
