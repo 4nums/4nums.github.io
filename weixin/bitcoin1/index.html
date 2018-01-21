@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta http-equiv="pragma" content="no-cache" />
-<title>比特币,以太币最新美元报价</title>
+<title>比特币和以太币价格</title>
 <link href="../../weixin/1024/main.css" rel="stylesheet" type="text/css">
 <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0, maximum-scale=1, user-scalable=no, minimal-ui">
 <script language="javascript" src="../../weixin/1/jq.mobi.min
@@ -39,128 +39,117 @@
  
 <body style="margin:0px 0 0 0;padding:0 0px;"   id = canvas_body>
 <style>p1 {font-size:25px; } </style>
-
-<div style="font-size:12px; color:blue; font-weight:bold;margin-top:1px; padding:0px;" align="center"; >每小时更新 数据来自GDAX </div>
-
-
+   
+	<div style="font-size:15px; color:green; font-weight:bold;margin-top:1px; padding:0px;" align="center"; >
+	最近90小时比特币价格   </div>
+ 
+   </div> 
 <div style=" text-align:center; font-size:15px;" style="width: 100%"> 
 <p id="updatetime"></p>
 </div>
+ <div style=" text-align:center;" style="width: 100%"> 
+<canvas id="canvas_1" ></canvas>  
 
-	<div style="font-size:12px; color:green; font-weight:bold;margin-top:1px; padding:0px;" align="center"; >最近10日比特币价格   </div>
-   </div>  
- <div style=" text-align:center;" style="width: 120%"> 
-<canvas id="canvas_1" ></canvas>  <br>
+</div>  
 
-<div style="font-size:12px; color:green; font-weight:bold;margin-top:1px; padding:0px;" align="center"; >最近120日比特币价格   </div>
-<canvas id="canvas_2" ></canvas>  
-
-
-<div style="font-size:12px; color:green; font-weight:bold;margin-top:1px; padding:0px;" align="center"; >最近2年比特币价格   </div>
-<canvas id="canvas_3" ></canvas>  
-
- </div>  
- <div style=" text-align:center; font-size:15px;" style="width: 100%"> 
-<p id="updatetime1"></p>
+<div style=" text-align:center;  font-size:15px;" style="width: 100%"> 
+<p id="updatetimecn"></p>
 </div>
- <div style=" text-align:center;" style="width: 120%"> 
-<div style="font-size:12px; color:green; font-weight:bold;margin-top:1px; padding:0px;" align="center"; >最近10日以太币价格   </div>
-
-<canvas id="canvas_4" ></canvas>  <br>
-
-<div style="font-size:12px; color:green; font-weight:bold;margin-top:1px; padding:0px;" align="center"; >最近120日以太币价格   </div>
-<canvas id="canvas_5" ></canvas>  
-
-
-<div style="font-size:12px; color:green; font-weight:bold;margin-top:1px; padding:0px;" align="center"; >最近2年以太币价格   </div>
-<canvas id="canvas_6" ></canvas>  
- 
 <div style="margin:0 1px;padding:1px; border:1px  text-align:center;">
-<span style =" font-weight:bold; font-size:12px; ">说明：各种数字货币风险大，请谨慎.<br> <a href="https://mp.weixin.qq.com/s?__biz=MzAxNTAwMzIzOQ==&mid=2649859594&idx=1&sn=a27725ab19062e657beb8c85eabec3c4"> 我们2017年9月的分析</a>。</span>  
+<span style =" font-weight:bold; font-size:12px; ">说明：</span> <span style ="font-size:10px;">PM2.5浓度来自美国大使馆的报告， 我们每小时进行一次更新， 拿到最新数据。
+为什么"空气质量指数" 和 "国家标准空气质量指数"有时不一样呢？ 那是因为我们国家的标准比美国的标准低， 估计是因为我国人民的肺比较结实。 
+  美国标准的优是PM2.5浓度低于12, 而我国是35。 美国的良是35, 而我国是75. 美国的不适合敏感人群是55，而我国是115。
+我们给出两个指数增加透明度。 	</span>
 </div> 
-     <script> 
-var text1 = "最新比特币价格: <p1 style=\"color:rgba(0,187,205,1)\";>"+ bc_10days[0] +"美元</pr>";
-var text2 = "最新以太币价格: <p1 style=\"color:rgba(110,0,205,1)\";>"+ eth_10days[0] +"美元</p1>";
-document.getElementById("updatetime").innerHTML= text1; 
-document.getElementById("updatetime1").innerHTML= text2; 
+ 	<script> 
+var last3d1 = fillhole (bc_10days);
+var levelaqi = aqi_level(last3d1[71]);
+var levelaqicn = aqi_levelcn(last3d1[71]);
+var fontcolor = "white";
+if (levelaqi <=1){ fontcolor = "black";}
 
-var last3d1 =  bc_10days.reverse();
 
-
-var mydata = {labels:[], datasets:[{fillColor:[], pointStrokeWidth : 1 , strokeColor:"rgba(0,187,205,1)", data:[]}]}
-var num_shown = 240,ii;
+var mydata = {labels:[], datasets:[{fillColor:[], strokeColor:[], data:[]}]}
+var num_shown = 72,ii;
+var colorarray=[0,0,0]; 
 for (ii = 0; ii < num_shown; ii++)
 {
-    mydata.labels[ii] = '';
+    mydata.labels[ii] = ' ';
     mydata.datasets[0].data[ii] = last3d1[ii];  
+    if (last3d1[ii] < 35.5){  
+	    colorarray =  color_array(Math.log(last3d1[ii]), Math.log(5.5), Math.log(35.5), [0,255,0], [255,255,0]);
+     }
+	else{
+	colorarray =  color_array(Math.log(last3d1[ii]), Math.log(35.5), Math.log(200), [255,255,0], [255,0,0]);}
+     mydata.datasets[0]. fillColor[ii] =  "rgba(" + colorarray[0]+","+colorarray[1]+","+colorarray[2]+",1)";
+     mydata.datasets[0]. strokeColor[ii] = "rgba( 170,170,170,1)";  
+     mydata.datasets[0]. pointColor = "rgba( 1,7,5,1)";
+     mydata.datasets[0]. pointStrokeColor = "rgba( 1,7,5,1)";
 
 }
 mydata.datasets[0]. strokeColor[num_shown-1] = "rgba( 0, 0, 0,1)";  
-var setopts = {
-    pointDot :false,
-    animation : true,
-  yAxisRight : true ,yAxisLeft : false ,
-rotateLabels : 0,
-  datasetFill : false,
-  xAxisFontSize: 3,
-  yAxisUnit:"美元",  
- yAxisFontSize : 4
-}
-mydata.labels[3] ='10天前'; mydata.labels[48] ='8天前';mydata.labels[96] ='6天前'; mydata.labels[144] ='4天前';     mydata.labels[192] ='2天前';    mydata.labels[239] ='现在'; 
-var myLine1 = new Chart(document.getElementById("canvas_1").getContext("2d")).Line(mydata,setopts);
-
-var bc_3month_rev=bc_3month.reverse();
-var mydata1 = {labels:[], datasets:[{fillColor:[], strokeColor:"rgba(0,187,205,1)", data:[]}]}
-
-for (ii = 0; ii < 119; ii++){
-    mydata1.datasets[0].data[ii] = bc_3month_rev[ii+1];
-        mydata1.labels[ii] = '';
-}
-//mydata1.labels[3] ='4月前';// mydata1.labels[30] ='3月前';mydata1.labels[60] ='2月前'; mydata1.labels[90] ='1月前';     mydata1.labels[119] ='现在';    
-
-var myLine1 = new Chart(document.getElementById("canvas_2").getContext("2d")).Line(mydata1,setopts);
-
-var bc_3month_rev=bc_2year.reverse();
-var mydata1 = {labels:[], datasets:[{fillColor:[], strokeColor:"rgba(0,187,205,1)", data:[]}]}
-for (ii = 0; ii < 730; ii++){
-    mydata1.datasets[0].data[ii] = bc_3month_rev[ii];
-        mydata1.labels[ii] = '';
-
-}
-var myLine1 = new Chart(document.getElementById("canvas_3").getContext("2d")).Line(mydata1,setopts);
-
-var last3d1 =  eth_10days.reverse();
-var mydata = {labels:[], datasets:[{fillColor:[], pointStrokeWidth : 1 , strokeColor:"rgba(110,0,205,1)", data:[]}]}
-var num_shown = 240,ii;
+mydata.labels[3] ='3天前'; mydata.labels[24] ='2天前';mydata.labels[48] ='1天前'; mydata.labels[72] ='';     mydata.labels[73] ='现在';    
+var mydata1 = {
+	labels : [ 1 ,3, 4],
+	datasets : [
+		{
+			fillColor : "rgba(151,7,5,1)",
+			strokeColor : ["rgba(220,0,220,1)","rgba(220,220,0,1)"],
+			pointColor : "rgba(220,220,0,1)",
+			pointStrokeColor : "#fff",
+			data : [1, 2, 3 ]
+		},
+	] 
+} 
+var mydata3 = {labels:[], datasets:[{fillColor:[], pointColor:[], data:[]}, {fillColor:[], pointColor:[], data:[]}]}
+var boundaqi1 = PM25_to_AQI(5.5),boundaqi2 = PM25_to_AQI(35.5),boundaqi3 = PM25_to_AQI(200);
 for (ii = 0; ii < num_shown; ii++)
 {
-    mydata.labels[ii] = '';
-    mydata.datasets[0].data[ii] = last3d1[ii];  
-}
-mydata.labels[3] ='10天前'; mydata.labels[48] ='8天前';mydata.labels[96] ='6天前'; mydata.labels[144] ='4天前';     mydata.labels[192] ='2天前';    mydata.labels[239] ='现在'; 
-var myLine1 = new Chart(document.getElementById("canvas_4").getContext("2d")).Line(mydata,setopts);
-
-
-
-var etc_3month_rev=eth_3month.reverse();
-var mydata1 = {labels:[], datasets:[{fillColor:[], strokeColor:"rgba(110,0,205,1)", data:[]}]}
-
-for (ii = 0; ii < 119; ii++){
-    mydata1.datasets[0].data[ii] = etc_3month_rev[ii+1];
-        mydata1.labels[ii] = '';
-}
-var myLine1 = new Chart(document.getElementById("canvas_5").getContext("2d")).Line(mydata1,setopts);
-
-
-var etc_2year_rev=eth_2year.reverse();
-var mydata1 = {labels:[], datasets:[{fillColor:[], strokeColor:"rgba(110,0,205,1)", data:[]}]}
-for (ii = 0; ii < 730; ii++){
-    mydata1.datasets[0].data[ii] = etc_2year_rev[ii];
-        mydata1.labels[ii] = '';
+    mydata3.labels[ii] = ii;
+    mydata3.datasets[0].data[ii] =     last3d1[ii];  
+    if (last3d1[ii] < 35.5){  
+	    colorarray =  color_array(Math.log(PM25_to_AQI (last3d1[ii])), Math.log(boundaqi1), Math.log(boundaqi2), [0,255,0], [255,255,0]);
+     }
+	else{
+	colorarray =  color_array(Math.log(PM25_to_AQI (last3d1[ii])), Math.log(boundaqi2), Math.log(boundaqi3), [255,255,0], [255,0,0]);}
+ mydata3.datasets[0]. fillColor[ii] =  "rgba(" + colorarray[0]+","+colorarray[1]+","+colorarray[2]+",1)";
+     mydata3.datasets[0]. strokeColor = "rgba( 170,170,170,1)";  
+     mydata3.datasets[0]. pointColor = "rgba( 1,7,5,1)";
+     mydata3.datasets[0]. pointStrokeColor = "rgba( 1,7,5,1)";
 
 }
-var myLine1 = new Chart(document.getElementById("canvas_6").getContext("2d")).Line(mydata1,setopts);
 
+var mydata4 = {labels:[], datasets:[{fillColor:[], pointColor:[], data:[]}]}
+var boundaqiCN1 = PM25_to_AQICN(5.5),boundaqiCN2 = PM25_to_AQICN(75.5),boundaqiCN3 = PM25_to_AQICN(200);
+for (ii = 0; ii < num_shown; ii++)
+{
+    mydata4.labels[ii] = ii;
+    mydata4.datasets[0].data[ii] = PM25_to_AQICN( last3d1[ii]);  
+    if (last3d1[ii] < 75.5){  
+	    colorarray =  color_array(Math.log(PM25_to_AQICN (last3d1[ii])), Math.log(boundaqiCN1), Math.log(boundaqiCN2), [0,255,0], [255,255,0]);
+     }
+	else{
+	colorarray =  color_array(Math.log(PM25_to_AQICN (last3d1[ii])), Math.log(boundaqiCN2), Math.log(boundaqiCN3), [255,255,0], [255,0,0]);}
+ mydata4.datasets[0]. fillColor[ii] =  "rgba(" + colorarray[0]+","+colorarray[1]+","+colorarray[2]+",1)";
+     mydata4.datasets[0]. strokeColor = "rgba( 170,170,170,1)";  
+     mydata4.datasets[0]. pointColor = "rgba( 1,7,5,1)";
+     mydata4.datasets[0]. pointStrokeColor = "rgba( 1,7,5,1)";
+
+}
+
+
+var setopts = {
+    animation : true,
+maxBarWidth:8,
+barDatasetSpacing:-10,
+barShowStroke:true,
+graphMin : 0 , yAxisRight : true ,yAxisLeft : false ,
+		rotateLabels : 60,
+yAxisLabel: "PM2.5 微克每立方米",
+ yAxisFontSize : 12
+}
+
+var myLine1 = new Chart(document.getElementById("canvas_1").getContext("2d")).Bar(mydata,setopts);
 </script>
 
  
