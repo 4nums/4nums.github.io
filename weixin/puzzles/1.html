@@ -15,10 +15,21 @@
 
 
  <script type="text/javascript">
+ function get_tail()
+{
+	var str1 = window.location.href;
+	var c = str1.split("?");
+    if (c.lengh<1){return ["1","1234"];}
+    else{
+        var d = c[1].split("_");
+        var id = parseInt(d[1]).toString();
+        return ["1",id];
+    }    
+}
  function init_game1()
 {
 
-	document.getElementById( "link1" ).innerHTML ="<a href ="+window.location.href +"?rank>查看排名</a><br><br>";
+	document.getElementById( "link1" ).innerHTML ="<img src=\"http://24theory.github.io/weixin/1/24.png\"  <br>";
 
 }
  
@@ -42,13 +53,9 @@
 
 	下面是答案！加订阅号: <strong style="color:red; font-size:25px;">cs24</strong>  </div>
 
-    <center>
-        <img src="http://24theory.github.io/weixin/corp/img/314159.png" width=90%/><br>
-  </center>
+  
  </div>
- <div style=" text-align:center;" id=link1>dd  </div> 
- <div style=" text-align:center;" id=main1>
-</div>  	    
+ <div style=" text-align:center;" id=link1> 这里马上出现答案，请稍后........  </div> 
   <p class="game-explanation" style="margin:1px 0 1px 0px;line-height:20px;">
 	<div style="float:center;text-align:center;font-size:14px;">
 	<strong >说明：</strong><span style="font-size:14px;"> 我们动态分析出您得到的2道4数题目，并实时给出答案。 
