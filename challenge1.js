@@ -497,7 +497,7 @@ function tickclock(){
  
 
 function game_draw(isclock){ // 0) status1, 1) game_type, 2) time, time_left, 3) solved, unsolved, 4) this game history
-	draw_text(Array(width/100,height *1.05), "4shu.net今日24点,微信:suan4shu",  "#555",   + (width/16) +"px sans-serif");
+	draw_text(Array(width/100,height *1.05), "4shu.net今日24点,微信:cs24",  "#555",   + (width/16) +"px sans-serif");
 	if (status1 == 6)
 	{	
       
