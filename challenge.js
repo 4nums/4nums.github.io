@@ -216,7 +216,7 @@ function ongame(regionID){
 		}
 	}
 	else if (regionID ==10){//skip
-	 var win = window.open('http://www.4nums.com', '_blank');
+	 var win = window.open('https://www.4nums.com', '_blank');
   	 win.focus(); // didn't solve one.
 	}
 	else if (regionID ==11){//quit
@@ -749,7 +749,7 @@ function onclick1 (e){
 
 		break; 
 		case 6:
-			 var win = window.open('http://www.4nums.com', '_blank');
+			 var win = window.open('https://www.4nums.com', '_blank');
 			 win.focus(); // didn't solve one.
 
 		beak;
